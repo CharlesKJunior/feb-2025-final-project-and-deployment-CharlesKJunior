@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | LUXE - Style Inspiration & Trends</title>
+    <meta name="description" content="Discover the latest trends, style guides, and inspiration from LUXE's editorial team">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0F172A',
+                            light: '#1E293B',
+                        },
+                        accent: '#7C3AED',
+                        secondary: '#F43F5E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+        .blog-card:hover .blog-title {
+            color: #7C3AED;
+        }
+        .category-tag:hover {
+            background-color: #7C3AED;
+            color: white;
+        }
+        .cart-count {
+            top: -8px;
+            right: -8px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900 antialiased">
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:px-4 focus:py-2 focus:rounded focus:shadow-lg focus:z-50">Skip to content</a>
+
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-primary">LUXE</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="font-medium text-gray-600 hover:text-accent transition-colors">Home</a>
+                <a href="products.html" class="font-medium text-gray-600 hover:text-accent transition-colors">Shop</a>
+                <a href="about.html" class="font-medium text-gray-600 hover:text-accent transition-colors">About</a>
+                <a href="blog.html" class="font-medium text-primary hover:text-accent transition-colors">Journal</a>
+                <a href="contact.html" class="font-medium text-gray-600 hover:text-accent transition-colors">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-6">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="font-medium text-gray-600 hover:text-accent transition-colors">Home</a>
+                    <a href="products.html" class="font-medium text-gray-600 hover:text-accent transition-colors">Shop</a>
+                    <a href="about.html" class="font-medium text-gray-600 hover:text-accent transition-colors">About</a>
+                    <a href="blog.html" class="font-medium text-primary hover:text-accent transition-colors">Journal</a>
+                    <a href="contact.html" class="font-medium text-gray-600 hover:text-accent transition-colors">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Header Icons -->
+            <div class="flex items-center space-x-4">
+                <button class="p-2 text-gray-700 hover:text-accent transition-colors relative">
+                    <i class="bi bi-search text-xl"></i>
+                </button>
+                <button class="p-2 text-gray-700 hover:text-accent transition-colors">
+                    <i class="bi bi-person text-xl"></i>
+                </button>
+                <button class="p-2 text-gray-700 hover:text-accent transition-colors relative">
+                    <i class="bi bi-bag text-xl"></i>
+                    <span class="cart-count absolute bg-secondary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- Hero Section -->
+            <section class="relative bg-primary text-white rounded-xl overflow-hidden mb-16">
+                <div class="absolute inset-0 bg-black/30 z-10"></div>
+                <img src="https://images.pexels.com/photos/3735641/pexels-photo-3735641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                     alt="Fashion Editorial" 
+                     class="w-full h-96 object-cover">
+                <div class="relative z-20 p-8 md:p-16 max-w-2xl">
+                    <span class="inline-block px-3 py-1 bg-white text-primary rounded-full text-sm font-medium mb-4">Featured Story</span>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">The Art of Minimalist Dressing</h1>
+                    <p class="text-lg mb-6">Discover how to build a timeless wardrobe with our essential guide to minimalist fashion</p>
+                    <a href="#featured-story" class="inline-flex items-center text-white font-medium hover:text-gray-200 transition-colors">
+                        Read Story
+                        <i class="bi bi-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Featured Categories -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">Explore Categories</h2>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#" class="category-tag px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-primary hover:text-white transition-colors">All Articles</a>
+                    <a href="#" class="category-tag px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-primary hover:text-white transition-colors">Fashion</a>
+                    <a href="#" class="category-tag px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-primary hover:text-white transition-colors">Lifestyle</a>
+                    <a href="#" class="category-tag px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-primary hover:text-white transition-colors">Interiors</a>
+                    <a href="#" class="category-tag px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-primary hover:text-white transition-colors">Travel</a>
+                    <a href="#" class="category-tag px-4 py-2 rounded-full bg-gray-100 text-gray-800 hover:bg-primary hover:text-white transition-colors">Sustainability</a>
+                </div>
+            </div>
+
+            <!-- Featured Story -->
+            <section id="featured-story" class="mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 lg:order-1">
+                        <span class="inline-block px-3 py-1 bg-primary text-white rounded-full text-sm font-medium mb-4">Fashion Guide</span>
+                        <h2 class="text-3xl font-bold mb-4">Capsule Wardrobe Essentials for 2023</h2>
+                        <p class="text-gray-600 mb-6">Building a capsule wardrobe is about selecting versatile, high-quality pieces that work together seamlessly. Our fashion editors have curated the 25 essential items you need this year to create endless outfit combinations while maintaining a minimalist aesthetic.</p>
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                 alt="Sarah Chen" 
+                                 class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <h4 class="font-medium">Sarah Chen</h4>
+                                <p class="text-gray-500 text-sm">Fashion Editor • May 15, 2023</p>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-medium hover:text-purple-800 transition-colors">
+                            Continue Reading
+                            <i class="bi bi-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <img src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Capsule Wardrobe" 
+                             class="w-full h-auto rounded-xl shadow-md">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest Articles -->
+            <section class="mb-16">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 class="text-2xl font-bold">Latest Articles</h2>
+                    <a href="#" class="text-sm font-medium text-gray-600 hover:text-accent transition-colors">View All</a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <article class="blog-card bg-white rounded-xl shadow-sm overflow-hidden">
+                        <a href="#" class="block overflow-hidden">
+                            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                 alt="Modern Interior Design" 
+                                 class="blog-image w-full h-60 object-cover transition-transform duration-300">
+                        </a>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm font-medium text-accent">Interiors</span>
+                                <span class="text-sm text-gray-500">Jun 2, 2023</span>
+                            </div>
+                            <h3 class="blog-title text-xl font-bold mb-3 transition-colors">
+                                <a href="#">5 Principles of Modern Scandinavian Interior Design</a>
+                            </h3>
+                            <p class="text-gray-600 mb-4">Discover how to incorporate the clean lines, natural materials, and cozy minimalism of Scandinavian design into your home.</p>
+                            <div class="flex items-center">
+                                <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                     alt="Emma Johnson" 
+                                     class="w-8 h-8 rounded-full object-cover mr-3">
+                                <span class="text-sm text-gray-700">Emma Johnson</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 2 -->
+                    <article class="blog-card bg-white rounded-xl shadow-sm overflow-hidden">
+                        <a href="#" class="block overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                 alt="Sustainable Fashion" 
+                                 class="blog-image w-full h-60 object-cover transition-transform duration-300">
+                        </a>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm font-medium text-accent">Sustainability</span>
+                                <span class="text-sm text-gray-500">May 28, 2023</span>
+                            </div>
+                            <h3 class="blog-title text-xl font-bold mb-3 transition-colors">
+                                <a href="#">The Future of Sustainable Fashion: Brands Leading the Way</a>
+                            </h3>
+                            <p class="text-gray-600 mb-4">Explore innovative brands that are redefining the fashion industry with eco-friendly materials and ethical production practices.</p>
+                            <div class="flex items-center">
+                                <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                     alt="Michael Chen" 
+                                     class="w-8 h-8 rounded-full object-cover mr-3">
+                                <span class="text-sm text-gray-700">Michael Chen</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 3 -->
+                    <article class="blog-card bg-white rounded-xl shadow-sm overflow-hidden">
+                        <a href="#" class="block overflow-hidden">
+                            <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                 alt="Travel Essentials" 
+                                 class="blog-image w-full h-60 object-cover transition-transform duration-300">
+                        </a>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm font-medium text-accent">Travel</span>
+                                <span class="text-sm text-gray-500">May 22, 2023</span>
+                            </div>
+                            <h3 class="blog-title text-xl font-bold mb-3 transition-colors">
+                                <a href="#">The Minimalist's Guide to Packing Light for Summer Travel</a>
+                            </h3>
+                            <p class="text-gray-600 mb-4">Learn how to pack everything you need for a two-week trip in just a carry-on with our expert-approved packing strategies.</p>
+                            <div class="flex items-center">
+                                <img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                                     alt="David Park" 
+                                     class="w-8 h-8 rounded-full object-cover mr-3">
+                                <span class="text-sm text-gray-700">David Park</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Popular Topics -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-8">Popular Topics</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Topic 1 -->
+                    <div class="relative rounded-xl overflow-hidden h-64">
+                        <img src="https://images.pexels.com/photos/994523/pexels-photo-994523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Seasonal Trends" 
+                             class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Spring/Summer 2023 Trends</h3>
+                                <p class="text-gray-200 mb-4">Discover the key looks dominating this season's fashion landscape</p>
+                                <a href="#" class="inline-flex items-center text-white font-medium hover:text-gray-200 transition-colors">
+                                    Explore Trends
+                                    <i class="bi bi-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Topic 2 -->
+                    <div class="relative rounded-xl overflow-hidden h-64">
+                        <img src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Home Office" 
+                             class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Creating a Productive Home Office</h3>
+                                <p class="text-gray-200 mb-4">Design tips for a workspace that inspires focus and creativity</p>
+                                <a href="#" class="inline-flex items-center text-white font-medium hover:text-gray-200 transition-colors">
+                                    Read Guide
+                                    <i class="bi bi-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="bg-primary text-white rounded-xl p-8 md:p-12">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Join Our Community</h2>
+                    <p class="text-lg text-gray-200 mb-6">Subscribe to receive weekly style inspiration, exclusive content, and early access to new collections.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" 
+                               placeholder="Your email address" 
+                               class="flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-white text-gray-900"
+                               required>
+                        <button type="submit" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </form>
+                    
+                    <p class="text-gray-300 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">LUXE</h3>
+                    <p class="text-gray-300 mb-4">Curated premium products for the modern lifestyle.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="bi bi-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="bi bi-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="bi bi-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="bi bi-pinterest text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-gray-300 hover:text-white transition-colors">All Products</a></li>
+                        <li><a href="products.html?category=fashion" class="text-gray-300 hover:text-white transition-colors">Fashion</a></li>
+                        <li><a href="products.html?category=electronics" class="text-gray-300 hover:text-white transition-colors">Electronics</a></li>
+                        <li><a href="products.html?category=home" class="text-gray-300 hover:text-white transition-colors">Home & Living</a></li>
+                        <li><a href="products.html?category=sale" class="text-gray-300 hover:text-white transition-colors">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Help</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Track Order</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <address class="not-italic text-gray-300 space-y-2">
+                        <p>123 Design Street</p>
+                        <p>San Francisco, CA 94103</p>
+                        <p>Email: <a href="mailto:hello@luxe.com" class="hover:text-white transition-colors">hello@luxe.com</a></p>
+                        <p>Phone: <a href="tel:+15551234567" class="hover:text-white transition-colors">(555) 123-4567</a></p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 LUXE. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" class="h-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard" class="h-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay" class="h-6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Article bookmark functionality
+        const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+        
+        bookmarkButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const icon = button.querySelector('i');
+                
+                if (icon.classList.contains('bi-bookmark')) {
+                    icon.classList.remove('bi-bookmark');
+                    icon.classList.add('bi-bookmark-fill', 'text-accent');
+                    
+                    // Show notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded-md shadow-lg animate-fade-in z-50';
+                    notification.textContent = 'Article saved to your bookmarks';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                        setTimeout(() => {
+                            notification.remove();
+                        }, 300);
+                    }, 3000);
+                } else {
+                    icon.classList.add('bi-bookmark');
+                    icon.classList.remove('bi-bookmark-fill', 'text-accent');
+                }
+            });
+        });
+        
+        // Category filter animation
+        const categoryTags = document.querySelectorAll('.category-tag');
+        
+        categoryTags.forEach(tag => {
+            tag.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all tags
+                categoryTags.forEach(t => t.classList.remove('bg-primary', 'text-white'));
+                
+                // Add active class to clicked tag
+                tag.classList.add('bg-primary', 'text-white');
+                
+                // Here you would typically filter articles
+                // This is just for demonstration
+                console.log(`Filtering by: ${tag.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>
