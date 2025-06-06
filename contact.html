@@ -435,15 +435,16 @@
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click event from propagating
+            mobileMenu.classList.toggle('hidden'); // Toggle visibility
         });
-        
+
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
-                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('hidden'); // Hide menu
             }
         });
         
